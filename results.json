@@ -1,0 +1,28 @@
+{
+    "productions": [
+        {
+            "event_at": "2025-03-24 10:39:03",
+            "machine_id": 2,
+            "good_part": true,
+            "quantity": 8
+        },
+        {
+            "event_at": "2025-03-24 10:41:53",
+            "machine_id": 1,
+            "good_part": true,
+            "quantity": 2
+        },
+        {
+            "event_at": "2025-03-24 10:39:53",
+            "machine_id": 2,
+            "good_part": true,
+            "quantity": 7
+        },
+        {
+            "event_at": "2025-03-24 10:39:53",
+            "machine_id": 3,
+            "good_part": false,
+            "quantity": 2
+        }
+    ]
+}

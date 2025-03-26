@@ -1,0 +1,32 @@
+<h1>Lista użytkowników</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Email</th>
+      <th>Akcje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td>
+          <%= link_to 'Pokaż', user, class: 'btn btn-info btn-sm' %>
+          <%= link_to 'Edytuj', edit_user_path(user), class: 'btn btn-warning btn-sm' %>
+          <% if user != current_user %>
+            <%= button_to 'Usuń', user, method: :delete, 
+                        data: { confirm: 'Czy na pewno usunąć tego użytkownika?' }, 
+                        class: 'btn btn-danger btn-sm' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Dodaj nowego użytkownika', new_user_path, class: 'btn btn-primary' %>

@@ -1,0 +1,34 @@
+<head>
+<%= csrf_meta_tags %>
+</head>
+<h1>Lista maszyn</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Czas cyklu (s)</th>
+      <th>Aktywna?</th>
+      <th>Akcje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @machines.each do |machine| %>
+      <tr>
+        <td><%= machine.name %></td>
+        <td><%= machine.cycle_time %></td>
+        <td><%= machine.active ? 'Tak' : 'Nie' %></td>
+        <td>
+          <%= link_to "Pokaż", machine %> |
+          <%= link_to "Edytuj", edit_machine_path(machine) %> |
+          <%= button_to "Usuń", machine, 
+          method: :delete, 
+          form: { data: { turbo_confirm: "Na pewno usunąć?" } }, 
+          class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Dodaj nową maszynę", new_machine_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_at: 2025-03-23 21:30:20
+  machine: one
+  quantity: 1
+  good_part: false
+
+two:
+  event_at: 2025-03-23 21:30:20
+  machine: two
+  quantity: 1
+  good_part: false

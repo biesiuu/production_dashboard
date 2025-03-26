@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+  </div>
+  <div class="card-body">
+    <p><strong>Email:</strong> <%= @user.email %></p>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Edytuj', edit_user_path(@user), class: 'btn btn-warning' %>
+    <% if @user != current_user %>
+      <%= button_to 'Usuń', @user, method: :delete, 
+                  data: { confirm: 'Na pewno usunąć?' }, 
+                  class: 'btn btn-danger' %>
+    <% end %>
+    <%= link_to 'Wróć', users_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

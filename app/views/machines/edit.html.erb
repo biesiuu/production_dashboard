@@ -1,0 +1,22 @@
+<h1>Edytuj maszynę</h1>
+
+<%= form_with(model: @machine, local: true) do |form| %>
+  <p>
+    <%= form.label :name, "Nazwa maszyny" %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :cycle_time, "Czas cyklu (s)" %><br>
+    <%= form.number_field :cycle_time %>
+  </p>
+
+  <p>
+    <%= form.label :active, "Aktywna?" %>
+    <%= form.check_box :active %>
+  </p>
+
+  <%= form.submit "Zapisz zmiany" %>
+<% end %>
+
+<%= link_to "Wróć", machines_path %>

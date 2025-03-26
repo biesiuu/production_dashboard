@@ -1,0 +1,10 @@
+<h1><%= @machine.name %></h1>
+
+<p><strong>Czas cyklu:</strong> <%= @machine.cycle_time %> sekund</p>
+<p><strong>Aktywna:</strong> <%= @machine.active ? 'Tak' : 'Nie' %></p>
+
+<%= link_to "Edytuj", edit_machine_path(@machine) %> |
+<%= link_to "Usuń", machine_path(@machine), 
+      data: { turbo_method: :delete, turbo_confirm: "Na pewno usunąć?" }, 
+      class: 'btn btn-danger' %> |
+<%= link_to "Wróć", machines_path %>
